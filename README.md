@@ -22,6 +22,30 @@ python app.py
 
 При размещении на Flask-хостинге используйте WSGI-объект `wsgi:application` и задайте случайный `SECRET_KEY` через переменную окружения. Пример настроек — в `.env.example`. Локальная база находится в `instance/leather.db`.
 
+### Бесплатный хостинг PythonAnywhere
+
+В Bash-консоли аккаунта:
+
+```bash
+git clone https://github.com/Korben-DEV/leather_practice.git
+cd leather_practice
+mkvirtualenv --python=/usr/bin/python3.13 leather-practice
+pip install -r requirements.txt
+python seed_public.py
+```
+
+Сохраните выведенный пароль сотрудника. В разделе **Web** создайте приложение через **Manual configuration** с Python 3.13, укажите виртуальное окружение `leather-practice`. В WSGI-файле замените содержимое на:
+
+```python
+import sys
+path = '/home/ВАШ_ЛОГИН/leather_practice'
+if path not in sys.path:
+    sys.path.insert(0, path)
+from wsgi import application
+```
+
+Добавьте static mapping: URL `/static/`, путь `/home/ВАШ_ЛОГИН/leather_practice/app/static/`. Затем нажмите **Reload**. Для публичного сайта используйте `seed_public.py`: он создаёт случайный пароль сотрудника, а обычные пользователи регистрируются самостоятельно. Не запускайте на публичном сайте `seed.py` с тестовыми паролями.
+
 ## Тестовые аккаунты
 
 - Покупатель: `user@example.com` / `User123!`

@@ -82,7 +82,7 @@ NEWS_IMAGES = {
 }
 
 
-def seed():
+def seed(include_test_users=True):
     app = create_app()
     with app.app_context():
         db.create_all()
@@ -116,9 +116,10 @@ def seed():
                 existing.image = NEWS_IMAGES[title]
             else:
                 db.session.add(News(title=title, short_description=short, content=content, image=NEWS_IMAGES[title], author='Мастерская'))
-        for name, email, password, role in [('Тестовый пользователь', 'user@example.com', 'User123!', 'user'), ('Сотрудник', 'employee@example.com', 'Employee123!', 'employee')]:
-            if not db.session.query(User).filter_by(email=email).first():
-                db.session.add(User(name=name, email=email, password_hash=generate_password_hash(password), role=role))
+        if include_test_users:
+            for name, email, password, role in [('Тестовый пользователь', 'user@example.com', 'User123!', 'user'), ('Сотрудник', 'employee@example.com', 'Employee123!', 'employee')]:
+                if not db.session.query(User).filter_by(email=email).first():
+                    db.session.add(User(name=name, email=email, password_hash=generate_password_hash(password), role=role))
         db.session.commit()
         print('База заполнена:', db.session.query(Product).count(), 'товаров,', db.session.query(Article).count(), 'статей,', db.session.query(News).count(), 'новостей')
 
