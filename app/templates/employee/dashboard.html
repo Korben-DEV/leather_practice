@@ -1,0 +1,1 @@
+{% extends 'base.html' %}{% block title %}Панель сотрудника{% endblock %}{% block content %}<div class="page-heading"><h1>Панель сотрудника</h1></div>{% include 'employee/_nav.html' %}<div class="stats">{% for label, value in counts.items() %}<div><strong>{{ value }}</strong><span>{{ label }}</span></div>{% endfor %}</div>{% endblock %}

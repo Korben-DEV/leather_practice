@@ -1,0 +1,29 @@
+﻿Файл,Адрес,Страница
+main-home.png,/,Главная
+main-catalog.png,/catalog,Каталог
+main-about.png,/about,О производстве
+main-materials.png,/materials,Материалы
+main-articles.png,/articles,Статьи
+main-news.png,/news,Новости
+main-contacts.png,/contacts,Контакты
+main-search-results.png,/search?q=кожа,Результаты поиска
+main-sitemap.png,/sitemap,Карта сайта
+main-cart-empty.png,/cart,Пустая корзина
+main-login.png,/login,Вход
+main-register.png,/register,Регистрация
+products-product-01.png,/catalog/1,Сумка «Город»
+articles-article-01.png,/articles/1,Как очищать кожаную сумку
+news-news-01.png,/news/1,Новая партия повседневных сумок
+account-cart-filled.png,/cart,Корзина с товаром
+account-profile.png,/profile,Личный кабинет
+account-orders.png,/my-orders,Мои заказы
+account-support.png,/support,Обращения
+account-checkout.png,/checkout,Оформление заказа
+employee-dashboard.png,/employee/,Панель сотрудника
+employee-products-list.png,/employee/products,Список: Товары
+employee-products-new.png,/employee/products/new,Добавить: Товары
+employee-edit-products-01.png,/employee/products/1/edit,Редактировать: Сумка «Город»
+employee-orders.png,/employee/orders,Заказы
+employee-users.png,/employee/users,Пользователи
+employee-users-new.png,/employee/users/new,Новый пользователь
+employee-requests.png,/employee/requests,Обращения
